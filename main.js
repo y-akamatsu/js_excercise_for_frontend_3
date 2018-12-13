@@ -1,7 +1,9 @@
 /**
  * 課題1: id属性値が `main` のdiv要素ににul要素を追加する
  */
-
+const ulElement = document.createElement('ul');
+const mainDivElement = document.getElementById('main');
+mainDivElement.appendChild(ulElement);
 
 /**
  * 課題2: 課題1で作成したul要素に5つのli要素(DOM)を追加する
@@ -13,8 +15,14 @@
  *     4. アイテム4
  *     5. アイテム5
  */
-
-
+(() =>{
+  const numberOfItems = 5;
+  for(let i = 0; i < numberOfItems; i++){
+    const liElement = document.createElement('li');
+    liElement.textContent = 'アイテム' + (i + 1);
+    ulElement.appendChild(liElement);
+  }
+})();
 /**
  * 課題3: 課題2で作成した5つのli要素の内、先頭から4番目(アイテム4)の要素を削除する
  *   - ヒント: DOMのchildrenプロパティが使える
