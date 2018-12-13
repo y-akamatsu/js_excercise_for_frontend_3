@@ -1,9 +1,7 @@
 /**
  * 課題1: id属性値が `main` のdiv要素ににul要素を追加する
  */
-const ulElement = document.createElement('ul');
-const mainDivElement = document.getElementById('main');
-mainDivElement.appendChild(ulElement);
+
 
 /**
  * 課題2: 課題1で作成したul要素に5つのli要素(DOM)を追加する
@@ -15,14 +13,6 @@ mainDivElement.appendChild(ulElement);
  *     4. アイテム4
  *     5. アイテム5
  */
-(() => {
-  const numberOfitems = 5;
-  for (let i = 0; i < numberOfitems; i++) {
-    const liElement = document.createElement('li');
-    liElement.textContent = 'アイテム' + (i + 1);
-    ulElement.appendChild(liElement);
-  }
-})();
 
 
 /**
@@ -31,20 +21,9 @@ mainDivElement.appendChild(ulElement);
  *     - https://developer.mozilla.org/ja/docs/Web/API/ParentNode/children
  */
 
-(function () {
-  deletedIndex = 3;
-  const targetElement = ulElement.children[deletedIndex];
-  ulElement.removeChild(targetElement);
-})();
 
 /**
  * 課題4: id属性値が `remove-all-items` のul要素内の全てのli要素を削除する
  *   - ul要素は削除しないこと
  */
 
-(function () {
-  const parentElement = document.getElementById('remove-all-items');
-  while (parentElement.firstChild) {
-    parentElement.removeChild(parentElement.firstChild);
-  }
-})();
